@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "text": "오늘도 디버깅과 함께하는 월요일",
+      "author": "anonymous",
+      "timestamp": "2025-08-12T10:30:00Z",
+      "lang": "ko",
+      "country": "KR"
+    },
+    {
+      "text": "Another day, another merge conflict",
+      "author": "anonymous",
+      "timestamp": "2025-08-12T08:45:00Z",
+      "lang": "en",
+      "country": "US"
+    }
+  ]
+}
