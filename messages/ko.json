@@ -1,0 +1,25 @@
+{
+  "messages": [
+    {
+      "text": "오늘도 디버깅과 함께하는 월요일",
+      "author": "anonymous",
+      "timestamp": "2025-08-12T10:30:00Z",
+      "lang": "ko",
+      "country": "KR"
+    },
+    {
+      "text": "null pointer exception, 우리 또 만났네",
+      "author": "anonymous",
+      "timestamp": "2025-08-12T09:15:00Z",
+      "lang": "ko", 
+      "country": "KR"
+    },
+    {
+      "text": "코드 리뷰 받기 전까지가 제일 자신만만함",
+      "author": "anonymous",
+      "timestamp": "2025-08-12T15:20:00Z",
+      "lang": "ko",
+      "country": "KR"
+    }
+  ]
+}
