@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "text": "Another day, another merge conflict",
+      "author": "anonymous",
+      "timestamp": "2025-08-12T08:45:00Z",
+      "lang": "en",
+      "country": "US"
+    },
+    {
+      "text": "Why does it work on my machine but not in production?",
+      "author": "anonymous",
+      "timestamp": "2025-08-12T16:30:00Z",
+      "lang": "en",
+      "country": "US"
+    }
+  ]
+}
