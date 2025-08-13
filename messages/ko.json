@@ -11,13 +11,20 @@
       "text": "null pointer exception, 우리 또 만났네",
       "author": "anonymous",
       "timestamp": "2025-08-12T09:15:00Z",
-      "lang": "ko", 
+      "lang": "ko",
       "country": "KR"
     },
     {
       "text": "코드 리뷰 받기 전까지가 제일 자신만만함",
       "author": "anonymous",
       "timestamp": "2025-08-12T15:20:00Z",
+      "lang": "ko",
+      "country": "KR"
+    },
+    {
+      "text": "다른 로컬에서 메시지 기여 테스트",
+      "author": "yybmion",
+      "timestamp": "2025-08-13T22:21:34.360Z",
       "lang": "ko",
       "country": "KR"
     }
