@@ -185,6 +185,4 @@ ___
 
 *Connect • Share • Inspire* 
 
-[⬆ Back to Top](#-pssst---global-developer-messages)
-
 </div>
