@@ -23,7 +23,7 @@ Message: "${message}"
 
 Review criteria:
 1. Does it contain spam, advertisements, or inappropriate content?
-2. Does it contain discriminatory expressions?
+2. Does it contain offensive language or discriminatory expressions?
 
 Response format:
 {
@@ -74,7 +74,7 @@ Please respond only in JSON format.`;
     console.error('Gemini API Error:', error.message);
     return {
       approved: false,
-      reason: 'Error occur from AI review',
+      reason: 'Service Error about AI review',
       language: 'unknown',
       category: 'api_error'
     };
@@ -96,6 +96,7 @@ async function extractNewMessages() {
   const changedFiles = filesResponse.data;
 
   const newMessages = [];
+  const seenMessages = new Set();
 
   for (const file of changedFiles) {
     if (file.filename.startsWith('messages/') && file.filename.endsWith('.json')) {
@@ -106,12 +107,17 @@ async function extractNewMessages() {
 
       if (content.messages && content.messages.length > 0) {
         const latestMessage = content.messages[content.messages.length - 1];
-        newMessages.push({
-          text: latestMessage.text,
-          author: latestMessage.author,
-          lang: latestMessage.lang,
-          file: file.filename
-        });
+
+        const messageKey = `${latestMessage.text}-${latestMessage.author}`;
+        if (!seenMessages.has(messageKey)) {
+          seenMessages.add(messageKey);
+          newMessages.push({
+            text: latestMessage.text,
+            author: latestMessage.author,
+            lang: latestMessage.lang,
+            file: file.filename
+          });
+        }
       }
     }
   }
@@ -132,14 +138,45 @@ async function addComment(prNumber, message) {
 
 async function mergePR(prNumber) {
   try {
-    await github.put(`/repos/${process.env.GITHUB_REPOSITORY}/pulls/${prNumber}/merge`, {
-      commit_title: 'AI Review: Auto-merge approved message',
+    console.log('Checking PR status before merge...');
+    const prResponse = await github.get(`/repos/${process.env.GITHUB_REPOSITORY}/pulls/${prNumber}`);
+    const pr = prResponse.data;
+
+    console.log(`PR State: ${pr.state}`);
+    console.log(`PR Mergeable: ${pr.mergeable}`);
+    console.log(`PR Mergeable State: ${pr.mergeable_state}`);
+
+    if (pr.state !== 'open') {
+      throw new Error(`PR is not open (state: ${pr.state})`);
+    }
+
+    if (pr.mergeable === false) {
+      throw new Error(`PR is not mergeable (mergeable_state: ${pr.mergeable_state})`);
+    }
+
+    console.log('Attempting to merge PR...');
+    const mergeResponse = await github.put(`/repos/${process.env.GITHUB_REPOSITORY}/pulls/${prNumber}/merge`, {
+      commit_title: '🤖 AI Review: Auto-merge approved message',
       commit_message: 'This message was automatically reviewed and approved by AI.',
       merge_method: 'squash'
     });
-    console.log('PR merged successfully');
+
+    console.log('PR merged successfully:', mergeResponse.data);
+
   } catch (error) {
     console.error('Failed to merge PR:', error.message);
+
+    if (error.response) {
+      console.error('Response status:', error.response.status);
+      console.error('Response data:', JSON.stringify(error.response.data, null, 2));
+    }
+
+    await addComment(prNumber,
+        `## ⚠️ Auto-merge Failed\n\n` +
+        `The message was approved but automatic merge failed.\n` +
+        `**Error:** ${error.message}\n\n` +
+        `Please merge manually or check the branch protection settings.`
+    );
   }
 }
 
