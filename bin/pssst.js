@@ -2,7 +2,7 @@
 // bin/pssst.js
 
 const { program } = require('commander');
-const { getRandomMessage } = require('../lib/github');
+const { getRandomMessage, contributeMessage } = require('../lib/github');
 const chalk = require('chalk');
 
 function getTimeAgo(timestamp) {
@@ -21,15 +21,54 @@ function getTimeAgo(timestamp) {
   }
 }
 
+function getFlag(country) {
+  const flags = {
+    'KR': '🇰🇷',
+    'US': '🇺🇸',
+    'JP': '🇯🇵',
+    'CN': '🇨🇳',
+    'GLOBAL': '🌍'
+  };
+  return flags[country] || '🌍';
+}
+
 program
-.action(async () => {
-  const message = await getRandomMessage();
+.option('-l, --lang <language>', 'filter by language (ko, en, ch, jp, all)', 'all')
+.option('-d, --detailed', 'show detailed author information')
+.action(async (options) => {
+  const message = await getRandomMessage(options.lang);
 
   if (typeof message === 'string') {
     console.log(chalk.red(message));
   } else {
     console.log(chalk.cyan(`"${message.text}"`));
-    console.log(chalk.gray(`- ${getTimeAgo(message.timestamp)}, author @${message.author} `));
+
+    console.log(chalk.gray(`- ${getTimeAgo(message.timestamp)}, @${message.author} ${getFlag(message.country)}`));
+
+    if (options.detailed) {
+      console.log(chalk.gray(`- Profile: https://github.com/${message.author}`));
+    }
+  }
+});
+
+program
+.command('contribute <message>')
+.description('contribute a new developer message')
+.action(async (message) => {
+  console.log(chalk.blue('🚀 Contributing your message...'));
+  console.log(chalk.gray(`Message: "${message}"`));
+
+  const result = await contributeMessage(message);
+
+  if (result.success) {
+    console.log(chalk.green('✅ Message contributed successfully!'));
+    console.log(chalk.gray(`🔗 PR created: ${result.prUrl}`));
+    console.log(chalk.gray(`👤 Author: @${result.author}`));
+    console.log(chalk.gray(`📋 Language detected: ${result.language}`));
+    console.log(chalk.gray('🤖 Your message will be reviewed and merged automatically'));
+  } else {
+    console.log(chalk.red('❌ Failed to contribute message:'));
+    console.log(chalk.red(result.error));
   }
 });
 
