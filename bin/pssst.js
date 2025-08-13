@@ -21,17 +21,6 @@ function getTimeAgo(timestamp) {
   }
 }
 
-function getFlag(country) {
-  const flags = {
-    'KR': '🇰🇷',
-    'US': '🇺🇸',
-    'JP': '🇯🇵',
-    'CN': '🇨🇳',
-    'GLOBAL': '🌍'
-  };
-  return flags[country] || '🌍';
-}
-
 program
 .option('-l, --lang <language>', 'filter by language (ko, en, ch, jp, all)', 'all')
 .option('-d, --detailed', 'show detailed author information')
@@ -43,7 +32,7 @@ program
   } else {
     console.log(chalk.cyan(`"${message.text}"`));
 
-    console.log(chalk.gray(`- ${getTimeAgo(message.timestamp)}, @${message.author} ${getFlag(message.country)}`));
+    console.log(chalk.gray(`- ${getTimeAgo(message.timestamp)}, @${message.author}`));
 
     if (options.detailed) {
       console.log(chalk.gray(`- Profile: https://github.com/${message.author}`));
@@ -52,7 +41,7 @@ program
 });
 
 program
-.command('contribute <message>')
+.command('send <message>')
 .description('contribute a new developer message')
 .action(async (message) => {
   console.log(chalk.blue('🚀 Contributing your message...'));

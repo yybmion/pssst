@@ -66,11 +66,11 @@ pssst send ""It doesn't matter if it's everyday content, development experiences
 ```
 
 **What happens next:**
-1. 🔄 **Auto-creates PR** to our repository
-2. 🤖 **AI detects language** and checks content appropriateness  
-3. 🏷️ **Adds language label** and prefix automatically
-4. ✅ **Auto-merges** if content is appropriate
-5. 🌍 **Your message becomes available** to developers worldwide
+1. **Auto-creates PR** to our repository
+2. **AI detects language** and checks content appropriateness  
+3. **Adds language label** and prefix automatically
+4. **Auto-merges** if content is appropriate
+5. **Your message becomes available** to developers worldwide
 
 ---
 
