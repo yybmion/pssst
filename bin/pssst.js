@@ -17,7 +17,7 @@ function getTimeAgo(timestamp) {
   } else if (diffHours > 0) {
     return `${diffHours}hours before`;
   } else {
-    return 'now';
+    return 'few minutes before';
   }
 }
 
@@ -79,7 +79,7 @@ program
 .description('contribute a new developer message')
 .option('-a, --anonymous', 'contribute message anonymously')
 .action(async (message, options) => {
-  console.log(chalk.blue('🚀 Contributing your message...'));
+  console.log(chalk.blue('Contributing your message...'));
 
   if (options.anonymous) {
     console.log(chalk.gray('-Anonymous mode'));
@@ -90,7 +90,7 @@ program
   if (result.success) {
     console.log(chalk.green('-Message contributed successfully!'));
     console.log(chalk.gray(`--${result.prUrl}`));
-    console.log(chalk.gray(`---@${result.author} • 📋 ${result.language}`));
+    console.log(chalk.gray(`---@${result.author} • ${result.language}`));
   } else {
     console.log(chalk.red('❌ Failed to contribute message:'));
     console.log(chalk.red(result.error));
