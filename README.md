@@ -70,15 +70,17 @@ pssst recent 5 --lang ko
 Share your developer experience with the global community:
 
 ```bash
-# Public message (with your GitHub username)
-pssst send "It works on my machine"
+# Anonymous message (no GitHub CLI required)
+pssst send "Send message anonymously" --anonymous
+pssst send "Works without GitHub CLI" -a
 
-# Anonymous message
-pssst send "우리 팀장이 git을 모른다" --anonymous
-pssst send "오늘 면접에서 떨어졌다..." -a
+# Public message (GitHub CLI authentication required)
+pssst send "It works on my machine"
 ```
 
-**❗First time only:** [Setup GitHub CLI](#github-cli-setup-required-for-contributing) and run `gh auth login`
+**Two modes available:**
+- **Anonymous Mode**: No GitHub CLI needed - start contributing immediately!
+- **Public Mode**: Requires [GitHub CLI setup](#github-cli-setup-optional-for-public-messages) - shows your GitHub username
 
 **What happens next:**
 1. **Auto-creates PR** to our repository
@@ -131,22 +133,25 @@ $ pssst --detailed
 ### 📝 Contributing Your Thoughts
 
 ```bash
-# Public contribution
-$ pssst send "Finally fixed that bug that haunted me for 3 days"
-
-Contributing your message...
-Message contributed successfully!
-https://github.com/yybmion/pssst/pull/42
-@your_username • 📋 en
-
-# Anonymous contribution  
+# 🕶️ Anonymous contribution (no setup required)
 $ pssst send "회사에서 야근이 너무 많다..." --anonymous
 
 Contributing your message...
-Anonymous mode
+Anonymous mode - no authentication required
 Message contributed successfully!
 https://github.com/yybmion/pssst/pull/43
-@anonymous • ko
+@anonymous
+
+# 👤 Public contribution (GitHub CLI required)
+$ pssst send "Finally fixed that bug that haunted me for 3 days"
+
+Contributing your message...
+Public mode - GitHub CLI authentication required
+Checking GitHub CLI authentication...
+Authenticated as: yybmion
+Message contributed successfully!
+https://github.com/yybmion/pssst/pull/42
+@yybmion
 ```
 
 ---
@@ -169,7 +174,7 @@ pssst --version                    # Show version
 |------|-------|-------------|
 | `--lang <code>` | `-l` | Filter by language (ko/en/ch/jp/all) |
 | `--detailed` | `-d` | Show detailed author information |
-| `--anonymous` | `-a` | Contribute message anonymously |
+| `--anonymous` | `-a` | Contribute message anonymously (no GitHub CLI required) |
 | `--help` | `-h` | Display help information |
 | `--version` | `-V` | Display version number |
 
@@ -177,21 +182,30 @@ pssst --version                    # Show version
 
 ## Getting Started
 
-1. **Install Node.js** (if not installed): Download from [nodejs.org](https://nodejs.org)
+### 🚀 **Instant Start (No Setup)**
+1. **Install Node.js**: Download from [nodejs.org](https://nodejs.org)
 2. **Install PSSST**: `npm install -g pssst`
 3. **Read messages**: `pssst`
-4. **Share your thought**: `pssst send "Your experience"`
-5. **Connect with global dev community**
+4. **Share anonymously**: `pssst send "Your experience" --anonymous`
+
+### 👤 **Public Contributions (Optional)**
+5. **Setup GitHub CLI**: [Follow setup guide](#github-cli-setup-optional-for-public-messages)
+6. **Share with your name**: `pssst send "Your experience"`
 
 ---
 
 ## Requirements
 
+### **Essential (for reading & anonymous contributions)**
 - **Node.js** >= 16.0.0
 - **npm** >= 7.0.0
-- **GitHub CLI** (for contributing messages)
 
-### **GitHub CLI Setup** (Required for contributing)
+### **Optional (for public contributions)**
+- **GitHub CLI** (only needed if you want to contribute with your GitHub username)
+
+### **GitHub CLI Setup** (Optional for public messages)
+
+**Only install if you want to contribute with your GitHub username:**
 
 ```bash
 # Install GitHub CLI
@@ -199,8 +213,13 @@ winget install GitHub.cli        # Windows
 brew install gh                  # macOS  
 sudo apt install gh             # Ubuntu/Debian
 
-# Authenticate
+# Authenticate (one-time setup)
 gh auth login
+```
+
+**Don't want to install GitHub CLI?** No problem! Use anonymous mode:
+```bash
+pssst send "Your message" --anonymous
 ```
 
 ### 💡 **If you don't have npm installed**
