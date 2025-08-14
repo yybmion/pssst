@@ -23,7 +23,7 @@ npm install -g pssst
 pssst
 
 # Example output:
-# "Code is like humor. When you have to explain it, it's bad"
+# "Fuck, I've been debugging this for 3 hours"
 # - 2hours before, @yybmion
 ```
 
