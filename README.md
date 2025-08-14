@@ -76,7 +76,7 @@ pssst send "우리 팀장이 git을 모른다" --anonymous
 pssst send "오늘 면접에서 떨어졌다..." -a
 ```
 
-**❗First time only:** [Setup GitHub CLI](#github-cli-setup) and run `gh auth login`
+**❗First time only:** [Setup GitHub CLI](#github-cli-setup-required-for-contributing) and run `gh auth login`
 
 **What happens next:**
 1. **Auto-creates PR** to our repository
