@@ -26,6 +26,6 @@ jobs:
       - name: AI Review Message
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PSSST_BOT_TOKEN }}
           GEMINI_MODEL: 'gemini-2.0-flash'
         run: node .github/scripts/ai-review.js
