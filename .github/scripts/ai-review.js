@@ -4,14 +4,14 @@ const fs = require('fs');
 
 const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const PSSST_BOT_TOKEN = process.env.PSSST_BOT_TOKEN;
 
 const github = axios.create({
   baseURL: 'https://api.github.com',
   headers: {
-    'Authorization': `token ${GITHUB_TOKEN}`,
+    'Authorization': `token ${PSSST_BOT_TOKEN}`,
     'Accept': 'application/vnd.github.v3+json',
-    'User-Agent': 'pssst-ai-review'
+    'User-Agent': 'pssst-bot'
   }
 });
 
@@ -207,8 +207,8 @@ async function main() {
     if (!GEMINI_API_KEY) {
       throw new Error('GEMINI_API_KEY not found');
     }
-    if (!GITHUB_TOKEN) {
-      throw new Error('GITHUB_TOKEN not found');
+    if (!PSSST_BOT_TOKEN) {
+      throw new Error('PSSST_BOT_TOKEN not found');
     }
 
     const { prNumber, messages } = await extractNewMessages();
