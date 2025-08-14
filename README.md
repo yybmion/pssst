@@ -2,11 +2,11 @@
 
 > *"Code has no borders. Share your story."*
 
-A CLI tool for sharing and discovering developer thoughts from around the world. Connect with fellow developers globally through their daily (coding) experiences, frustrations, and insights.
+🍿 A CLI snack for developers - get bite-sized thoughts from devs worldwide while coding
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -21,8 +21,8 @@ npm install -g pssst
 pssst
 
 # Example output:
-# "I've been developing while listening to Sik-K's 'lov3' music these days. You should give it a listen, I recommend it."
-# - 3hours before, @yybmion
+# "console.log로 디버깅하는 나... 언제 성장할까"
+# - 2hours before, @yybmion
 ```
 
 That's it! Start exploring global developer thoughts right away! 🎉
@@ -45,6 +45,12 @@ pssst --lang en
 
 # Show detailed author information
 pssst --detailed
+
+# View recent messages
+pssst recent
+
+# View recent 5 messages in Korean
+pssst recent 5 --lang ko
 ```
 
 ### 🌐 **Language Options**
@@ -62,15 +68,19 @@ pssst --detailed
 Share your developer experience with the global community:
 
 ```bash
-pssst send ""It doesn't matter if it's everyday content, development experiences, or funny stories. Just share your stories!""
+# Public message (with your GitHub username)
+pssst send "It works on my machine"
+
+# Anonymous message
+pssst send "우리 팀장이 git을 모른다" --anonymous
+pssst send "오늘 면접에서 떨어졌다..." -a
 ```
 
 **What happens next:**
 1. **Auto-creates PR** to our repository
-2. **AI detects language** and checks content appropriateness  
-3. **Adds language label** and prefix automatically
-4. **Auto-merges** if content is appropriate
-5. **Your message becomes available** to developers worldwide
+2. **AI detects language** and checks content appropriateness
+3. **Auto-merges** if content is appropriate
+4. **Your message becomes available** to developers worldwide
 
 ---
 
@@ -80,19 +90,36 @@ pssst send ""It doesn't matter if it's everyday content, development experiences
 
 ```bash
 $ pssst --lang en  
-"Monday morning debugging feels like Sisyphus rolling the boulder"
-- 1day before, @dev_sarah
+"When I wrote this code, only God and I understood what I did. Now only God knows"
+- 1day before, @yybmion
 
 $ pssst --lang ko
-"오늘도 디버깅으로 시작하는 하루"
-- 2hours before, @coder_kim
+"Stack Overflow가 없다면 내 코드의 90%는 존재하지 않을 것"
+- 2hours before, @yybmion
+```
+
+### 📋 Recent Messages
+
+```bash
+$ pssst recent 3
+
+📝 Recent 3 messages from all:
+
+1. "Programming is like sex: One mistake and you have to support it for the rest of your life"
+   - 1days before, @yybmion
+
+2. "카페인을 코드로 변환하는 유기체입니다"
+   - 2days before, @yybmion
+
+3. "Code is like humor. When you have to explain it, it's bad"
+   - 3days before, @yybmion
 ```
 
 ### 🔍 Detailed Information
 
 ```bash
 $ pssst --detailed
-"HTML is a programming language"
+"There are only 10 types of people in this world: those who understand binary and those who don't"
 - 1hour before, @yybmion
 - Profile: https://github.com/yybmion
 ```
@@ -100,66 +127,67 @@ $ pssst --detailed
 ### 📝 Contributing Your Thoughts
 
 ```bash
-$ pssst contribute "Finally fixed that bug that haunted me for 3 days"
+# Public contribution
+$ pssst send "Finally fixed that bug that haunted me for 3 days"
 
 Contributing your message...
-Message: "Finally fixed that bug that haunted me for 3 days"
-Detecting language...
-   Detected: en (US)
-Cloning repository...
-Creating branch: add-message-1705123456789
-Adding message to en.json and all.json...
-Committing changes...
-Pushing to GitHub...
-Creating Pull Request...
-
 Message contributed successfully!
-PR created: https://github.com/yybmion/pssst/pull/42
-Author: @your_username
-Language detected: en
-Your message will be reviewed and merged automatically
+https://github.com/yybmion/pssst/pull/42
+@your_username • 📋 en
+
+# Anonymous contribution  
+$ pssst send "회사에서 야근이 너무 많다..." --anonymous
+
+Contributing your message...
+Anonymous mode
+Message contributed successfully!
+https://github.com/yybmion/pssst/pull/43
+@anonymous • ko
 ```
 
 ---
 
 ## 🛠️ Advanced Usage
 
-### 🎯 **Command Options**
+### **Command Options**
 
 ```bash
 pssst [options]                    # View random message
-pssst send <message>         # Contribute new message
+pssst recent [count] [options]     # View recent messages (default: 10)
+pssst send <message> [options]     # Contribute new message
 pssst --help                       # Show help information
 pssst --version                    # Show version
 ```
 
-### ⚙️ **Available Flags**
+### **Available Flags**
 
 | Flag | Short | Description |
 |------|-------|-------------|
 | `--lang <code>` | `-l` | Filter by language (ko/en/ch/jp/all) |
 | `--detailed` | `-d` | Show detailed author information |
+| `--anonymous` | `-a` | Contribute message anonymously |
 | `--help` | `-h` | Display help information |
 | `--version` | `-V` | Display version number |
 
 ---
 
-## 🚦 Getting Started
+## Getting Started
 
-1. **Install PSSST**: `npm install -g pssst`
-2. **Read messages**: `pssst`
-3. **Share your thought**: `pssst send "Your experience"`
-4. **Connect with global dev community** 🌍
+1. **Install Node.js** (if not installed): Download from [nodejs.org](https://nodejs.org)
+2. **Install PSSST**: `npm install -g pssst`
+3. **Read messages**: `pssst`
+4. **Share your thought**: `pssst send "Your experience"`
+5. **Connect with global dev community**
 
 ---
 
-## 📋 Requirements
+## Requirements
 
 - **Node.js** >= 16.0.0
-- **npm** >= 7.0.0  
+- **npm** >= 7.0.0
 - **GitHub CLI** (for contributing messages)
 
-### 🔧 **GitHub CLI Setup** (Required for contributing)
+### **GitHub CLI Setup** (Required for contributing)
 
 ```bash
 # Install GitHub CLI
@@ -169,6 +197,31 @@ sudo apt install gh             # Ubuntu/Debian
 
 # Authenticate
 gh auth login
+```
+
+### 💡 **If you don't have npm installed**
+
+**Windows:**
+```bash
+# Download from official website or use package manager
+winget install OpenJS.NodeJS
+# or visit https://nodejs.org
+```
+
+**macOS:**
+```bash
+# Using Homebrew
+brew install node
+# or visit https://nodejs.org
+```
+
+**Linux:**
+```bash
+# Ubuntu/Debian
+sudo apt update && sudo apt install nodejs npm
+
+# CentOS/RHEL
+sudo yum install nodejs npm
 ```
 
 ---
@@ -183,8 +236,6 @@ ___
 
 **Made with ❤️ by developers, for developers worldwide**
 
-*Connect • Share • Inspire* 
-
-[⬆ Back to Top](#-pssst---global-developer-messages)
+*Connect • Share • Inspire*
 
 </div>

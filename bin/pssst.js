@@ -2,7 +2,7 @@
 // bin/pssst.js
 
 const { program } = require('commander');
-const { getRandomMessage, contributeMessage } = require('../lib/github');
+const { getRandomMessage, getRecentMessages, contributeMessage } = require('../lib/github');
 const chalk = require('chalk');
 
 function getTimeAgo(timestamp) {
@@ -31,7 +31,6 @@ program
     console.log(chalk.red(message));
   } else {
     console.log(chalk.cyan(`"${message.text}"`));
-
     console.log(chalk.gray(`- ${getTimeAgo(message.timestamp)}, @${message.author}`));
 
     if (options.detailed) {
@@ -41,22 +40,59 @@ program
 });
 
 program
+.command('recent [count]')
+.description('show recent messages (default: 10)')
+.option('-l, --lang <language>', 'filter by language (ko, en, ch, jp, all)', 'all')
+.option('-d, --detailed', 'show detailed author information')
+.action(async (count, options) => {
+  const messageCount = parseInt(count) || 10;
+
+  if (messageCount < 1 || messageCount > 50) {
+    console.log(chalk.red('Count must be between 1 and 50'));
+    return;
+  }
+
+  console.log(chalk.blue(`📝 Recent ${messageCount} messages from ${options.lang === 'all' ? 'all languages' : options.lang}:\n`));
+
+  const messages = await getRecentMessages(options.lang, messageCount);
+
+  if (typeof messages === 'string') {
+    console.log(chalk.red(messages));
+  } else if (messages.length === 0) {
+    console.log(chalk.yellow('No messages found'));
+  } else {
+    messages.forEach((message, index) => {
+      console.log(chalk.cyan(`${index + 1}. "${message.text}"`));
+      console.log(chalk.gray(`   - ${getTimeAgo(message.timestamp)}, @${message.author}`));
+
+      if (options.detailed) {
+        console.log(chalk.gray(`   - Profile: https://github.com/${message.author}`));
+      }
+
+      if (index < messages.length - 1) console.log();
+    });
+  }
+});
+
+program
 .command('send <message>')
 .description('contribute a new developer message')
-.action(async (message) => {
-  console.log(chalk.blue('🚀 Contributing your message...'));
-  console.log(chalk.gray(`Message: "${message}"`));
+.option('-a, --anonymous', 'contribute message anonymously')
+.action(async (message, options) => {
+  console.log(chalk.blue('---Contributing your message...'));
 
-  const result = await contributeMessage(message);
+  if (options.anonymous) {
+    console.log(chalk.gray('🕶️  Anonymous mode'));
+  }
+
+  const result = await contributeMessage(message, options.anonymous);
 
   if (result.success) {
-    console.log(chalk.green('✅ Message contributed successfully!'));
-    console.log(chalk.gray(`🔗 PR created: ${result.prUrl}`));
-    console.log(chalk.gray(`👤 Author: @${result.author}`));
-    console.log(chalk.gray(`📋 Language detected: ${result.language}`));
-    console.log(chalk.gray('🤖 Your message will be reviewed and merged automatically'));
+    console.log(chalk.green('----Message contributed successfully!'));
+    console.log(chalk.gray(`-----${result.prUrl}`));
+    console.log(chalk.gray(`------@${result.author} • ${result.language}`));
   } else {
-    console.log(chalk.red('❌ Failed to contribute message:'));
+    console.log(chalk.red('---Failed to contribute message:'));
     console.log(chalk.red(result.error));
   }
 });

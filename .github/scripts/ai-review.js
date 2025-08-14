@@ -156,7 +156,7 @@ async function mergePR(prNumber) {
 
     console.log('Attempting to merge PR...');
     const mergeResponse = await github.put(`/repos/${process.env.GITHUB_REPOSITORY}/pulls/${prNumber}/merge`, {
-      commit_title: '🤖 AI Review: Auto-merge approved message',
+      commit_title: 'Auto-merge approved message',
       commit_message: 'This message was automatically reviewed and approved by AI.',
       merge_method: 'squash'
     });
