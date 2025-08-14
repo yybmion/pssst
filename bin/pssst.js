@@ -59,7 +59,7 @@ program
   if (typeof messages === 'string') {
     console.log(chalk.red(messages));
   } else if (messages.length === 0) {
-    console.log(chalk.yellow('No messages found'));
+    console.log(chalk.yellow('No messages found 😢'));
   } else {
     messages.forEach((message, index) => {
       console.log(chalk.cyan(`${index + 1}. "${message.text}"`));
@@ -79,20 +79,20 @@ program
 .description('contribute a new developer message')
 .option('-a, --anonymous', 'contribute message anonymously')
 .action(async (message, options) => {
-  console.log(chalk.blue('---Contributing your message...'));
+  console.log(chalk.blue('🚀 Contributing your message...'));
 
   if (options.anonymous) {
-    console.log(chalk.gray('🕶️  Anonymous mode'));
+    console.log(chalk.gray('-Anonymous mode'));
   }
 
   const result = await contributeMessage(message, options.anonymous);
 
   if (result.success) {
-    console.log(chalk.green('----Message contributed successfully!'));
-    console.log(chalk.gray(`-----${result.prUrl}`));
-    console.log(chalk.gray(`------@${result.author} • ${result.language}`));
+    console.log(chalk.green('-Message contributed successfully!'));
+    console.log(chalk.gray(`--${result.prUrl}`));
+    console.log(chalk.gray(`---@${result.author} • 📋 ${result.language}`));
   } else {
-    console.log(chalk.red('---Failed to contribute message:'));
+    console.log(chalk.red('❌ Failed to contribute message:'));
     console.log(chalk.red(result.error));
   }
 });

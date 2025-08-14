@@ -1,8 +1,8 @@
 # PSSST - Share your Messages
 
-> *"Code has no borders. Share your story."*
+**💭 Quick dev thoughts. Anytime, anywhere.**
 
-🍿 A CLI snack for developers - get bite-sized thoughts from devs worldwide while coding
+Waiting for builds? Stuck on a bug? Just need a laugh? Get bite-sized developer stories from around the world - right in your terminal. No browser needed.
 
 ---
 
@@ -21,7 +21,7 @@ npm install -g pssst
 pssst
 
 # Example output:
-# "console.log로 디버깅하는 나... 언제 성장할까"
+# "Code is like humor. When you have to explain it, it's bad"
 # - 2hours before, @yybmion
 ```
 
@@ -37,11 +37,11 @@ That's it! Start exploring global developer thoughts right away! 🎉
 # Random message from all languages
 pssst
 
-# Korean messages only
-pssst --lang ko
-
 # English messages only  
 pssst --lang en
+
+# Korean messages only
+pssst --lang ko
 
 # Show detailed author information
 pssst --detailed
@@ -57,8 +57,8 @@ pssst recent 5 --lang ko
 
 | Language | Code |
 |----------|------|
-| Korean | `ko` |
 | English | `en` |
+| Korean | `ko` |
 | Chinese | `ch` |
 | Japanese | `jp` |
 | All | `all` |
@@ -75,6 +75,8 @@ pssst send "It works on my machine"
 pssst send "우리 팀장이 git을 모른다" --anonymous
 pssst send "오늘 면접에서 떨어졌다..." -a
 ```
+
+**❗First time only:** [Setup GitHub CLI](#-github-cli-setup-required-for-contributing) and run `gh auth login`
 
 **What happens next:**
 1. **Auto-creates PR** to our repository

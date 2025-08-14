@@ -4,169 +4,145 @@
       "text": "오늘도 디버깅과 함께하는 월요일",
       "author": "anonymous",
       "timestamp": "2025-08-12T10:30:00Z",
-      "lang": "ko",
-      "country": "KR"
+      "lang": "ko"
     },
     {
       "text": "Another day, another merge conflict",
       "author": "anonymous",
       "timestamp": "2025-08-12T08:45:00Z",
-      "lang": "en",
-      "country": "US"
+      "lang": "en"
     },
     {
       "text": "pssst I see dead people",
       "author": "yybmion",
       "timestamp": "2025-08-13T18:43:37.627Z",
-      "lang": "en",
-      "country": "US"
+      "lang": "en"
     },
     {
       "text": "다른 로컬에서 메시지 기여 테스트",
       "author": "yybmion",
       "timestamp": "2025-08-13T22:21:34.360Z",
-      "lang": "ko",
-      "country": "KR"
+      "lang": "ko"
     },
     {
       "text": "It works on my machine",
       "author": "yybmion",
       "timestamp": "2025-08-14T09:15:00Z",
-      "lang": "en",
-      "country": "US"
+      "lang": "en"
     },
     {
       "text": "console.log로 디버깅하는 나... 언제 성장할까",
       "author": "yybmion",
       "timestamp": "2025-08-14T10:20:00Z",
-      "lang": "ko",
-      "country": "KR"
+      "lang": "ko"
     },
     {
       "text": "Programmer: A machine that turns coffee into code",
       "author": "yybmion",
       "timestamp": "2025-08-14T11:30:00Z",
-      "lang": "en",
-      "country": "US"
+      "lang": "en"
     },
     {
       "text": "Stack Overflow가 없다면 내 코드의 90%는 존재하지 않을 것",
       "author": "yybmion",
       "timestamp": "2025-08-14T12:45:00Z",
-      "lang": "ko",
-      "country": "KR"
+      "lang": "ko"
     },
     {
       "text": "When I wrote this code, only God and I understood what I did. Now only God knows",
       "author": "yybmion",
       "timestamp": "2025-08-14T13:10:00Z",
-      "lang": "en",
-      "country": "US"
+      "lang": "en"
     },
     {
       "text": "월요일에 작성한 코드를 한 주 내내 디버깅하느니 차라리 월요일에 침대에 누워있는 게 나을 때가 있다",
       "author": "yybmion",
       "timestamp": "2025-08-14T14:25:00Z",
-      "lang": "ko",
-      "country": "KR"
+      "lang": "ko"
     },
     {
       "text": "There are only 10 types of people in this world: those who understand binary and those who don't",
       "author": "yybmion",
       "timestamp": "2025-08-14T15:40:00Z",
-      "lang": "en",
-      "country": "US"
+      "lang": "en"
     },
     {
       "text": "카페인을 코드로 변환하는 유기체입니다",
       "author": "yybmion",
       "timestamp": "2025-08-14T16:55:00Z",
-      "lang": "ko",
-      "country": "KR"
+      "lang": "ko"
     },
     {
       "text": "Programming is like sex: One mistake and you have to support it for the rest of your life",
       "author": "yybmion",
       "timestamp": "2025-08-14T17:20:00Z",
-      "lang": "en",
-      "country": "US"
+      "lang": "en"
     },
     {
       "text": "99 little bugs in the code, 99 little bugs. Take one down, patch it around, 127 little bugs in the code",
       "author": "yybmion",
       "timestamp": "2025-08-14T18:35:00Z",
-      "lang": "en",
-      "country": "US"
+      "lang": "en"
     },
     {
       "text": "하드웨어와 소프트웨어의 차이? 하드웨어는 발로 찰 수 있다는 것",
       "author": "yybmion",
       "timestamp": "2025-08-14T19:50:00Z",
-      "lang": "ko",
-      "country": "KR"
+      "lang": "ko"
     },
     {
       "text": "Code is like humor. When you have to explain it, it's bad",
       "author": "yybmion",
       "timestamp": "2025-08-14T20:15:00Z",
-      "lang": "en",
-      "country": "US"
+      "lang": "en"
     },
     {
       "text": "인터넷에서 복사한 코드를 프로덕션에 붙여넣는 것은 길거리에서 주운 껌을 씹는 것과 같다",
       "author": "yybmion",
       "timestamp": "2025-08-14T21:30:00Z",
-      "lang": "ko",
-      "country": "KR"
+      "lang": "ko"
     },
     {
       "text": "A SQL query walks into a bar. He approaches two tables and says, 'Mind if I join you?'",
       "author": "yybmion",
       "timestamp": "2025-08-14T22:45:00Z",
-      "lang": "en",
-      "country": "US"
+      "lang": "en"
     },
     {
       "text": "프로그래밍의 절반은 코딩이다. 나머지 90%는 디버깅이다",
       "author": "yybmion",
       "timestamp": "2025-08-15T08:00:00Z",
-      "lang": "ko",
-      "country": "KR"
+      "lang": "ko"
     },
     {
       "text": "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday's code",
       "author": "yybmion",
       "timestamp": "2025-08-15T09:15:00Z",
-      "lang": "en",
-      "country": "US"
+      "lang": "en"
     },
     {
       "text": "변수명을 지을 때가 가장 창의적인 순간",
       "author": "yybmion",
       "timestamp": "2025-08-15T10:30:00Z",
-      "lang": "ko",
-      "country": "KR"
+      "lang": "ko"
     },
     {
       "text": "How many programmers does it take to change a light bulb? None, that's a hardware problem",
       "author": "yybmion",
       "timestamp": "2025-08-15T11:45:00Z",
-      "lang": "en",
-      "country": "US"
+      "lang": "en"
     },
     {
       "text": "주석이 거짓말할 때가 있지만 코드는 절대 거짓말하지 않는다",
       "author": "yybmion",
       "timestamp": "2025-08-15T13:00:00Z",
-      "lang": "ko",
-      "country": "KR"
+      "lang": "ko"
     },
     {
       "text": "Talk is cheap. Show me the code",
       "author": "yybmion",
       "timestamp": "2025-08-15T14:15:00Z",
-      "lang": "en",
-      "country": "US"
+      "lang": "en"
     }
   ]
 }
