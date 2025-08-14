@@ -67,3 +67,4 @@ config.json
 .config
 
 temp-messages/
+.vercel

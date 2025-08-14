@@ -36,7 +36,7 @@ module.exports = async function handler(req, res) {
 
   if (req.method === 'POST') {
     try {
-      const { message, isAnonymous = false, author = 'anonymous' } = req.body;
+      const { message, isAnonymous = false, author = 'anonymous', timestamp } = req.body;
 
       if (!message || typeof message !== 'string') {
         return res.status(400).json({
@@ -73,7 +73,7 @@ module.exports = async function handler(req, res) {
       const newMessage = {
         text: message,
         author: isAnonymous ? 'anonymous' : author,
-        timestamp: getLocalISOString(),
+        timestamp: timestamp || getLocalISOString(),
         lang: lang
       };
 
