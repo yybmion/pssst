@@ -4,6 +4,8 @@
 
 Waiting for builds? Stuck on a bug? Just need a laugh? Get bite-sized developer stories from around the world - right in your terminal. No browser needed.
 
+"Don't just read - share your contents too!"
+
 ---
 
 ## Quick Start
