@@ -3,6 +3,19 @@ const axios = require('axios');
 const BOT_TOKEN = process.env.PSSST_BOT_TOKEN;
 const TARGET_REPO = 'yybmion/pssst';
 
+function getLocalISOString() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  const milliseconds = String(now.getMilliseconds()).padStart(3, '0');
+
+  return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}.${milliseconds}Z`;
+}
+
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -16,7 +29,7 @@ module.exports = async function handler(req, res) {
     return res.status(200).json({
       status: "PSSST API is working!",
       hasToken: !!BOT_TOKEN,
-      timestamp: new Date().toISOString(),
+      timestamp: getLocalISOString(),
       environment: process.env.NODE_ENV || 'production'
     });
   }
@@ -60,7 +73,7 @@ module.exports = async function handler(req, res) {
       const newMessage = {
         text: message,
         author: isAnonymous ? 'anonymous' : author,
-        timestamp: new Date().toISOString(),
+        timestamp: getLocalISOString(),
         lang: lang
       };
 

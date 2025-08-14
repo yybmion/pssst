@@ -52,14 +52,14 @@ program
     return;
   }
 
-  console.log(chalk.blue(`📝 Recent ${messageCount} messages from ${options.lang === 'all' ? 'all languages' : options.lang}:\n`));
+  console.log(chalk.blue(`Recent ${messageCount} messages from ${options.lang === 'all' ? 'all languages' : options.lang}:\n`));
 
   const messages = await getRecentMessages(options.lang, messageCount);
 
   if (typeof messages === 'string') {
     console.log(chalk.red(messages));
   } else if (messages.length === 0) {
-    console.log(chalk.yellow('No messages found 😢'));
+    console.log(chalk.yellow('No messages found'));
   } else {
     messages.forEach((message, index) => {
       console.log(chalk.cyan(`${index + 1}. "${message.text}"`));
@@ -77,20 +77,22 @@ program
 program
 .command('send <message>')
 .description('contribute a new developer message')
-.option('-a, --anonymous', 'contribute message anonymously')
+.option('-a, --anonymous', 'contribute message anonymously (no GitHub CLI required)')
 .action(async (message, options) => {
   console.log(chalk.blue('Contributing your message...'));
 
   if (options.anonymous) {
-    console.log(chalk.gray('-Anonymous mode'));
+    console.log(chalk.gray('Anonymous mode - no authentication required'));
+  } else {
+    console.log(chalk.gray('Public mode - GitHub CLI authentication required'));
   }
 
   const result = await contributeMessage(message, options.anonymous);
 
   if (result.success) {
-    console.log(chalk.green('-Message contributed successfully!'));
-    console.log(chalk.gray(`--${result.prUrl}`));
-    console.log(chalk.gray(`---@${result.author} • ${result.language}`));
+    console.log(chalk.green('--Message contributed successfully!'));
+    console.log(chalk.gray(`---${result.prUrl}`));
+    console.log(chalk.gray(`----@${result.author} • ${result.language}`));
   } else {
     console.log(chalk.red('❌ Failed to contribute message:'));
     console.log(chalk.red(result.error));
