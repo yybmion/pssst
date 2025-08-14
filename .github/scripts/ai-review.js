@@ -21,9 +21,18 @@ Please review the following developer message:
 
 Message: "${message}"
 
-Review criteria:
-1. Does it contain spam, advertisements, or inappropriate content?
-2. Does it contain offensive language or discriminatory expressions?
+Review criteria - ONLY REJECT if the message contains:
+1. Hate speech, discrimination, or harassment based on race, gender, religion, nationality, etc.
+2. Terrorist content, violence, or threats against individuals or groups
+3. Spam, advertisements, or promotional content
+4. Sexual content or explicit material
+5. Illegal activities or dangerous instructions
+
+IMPORTANT: 
+- Casual profanity and swear words are ALLOWED as they are common in developer communication
+- Technical complaints, frustrations, or criticism are ALLOWED
+- Everyday developer emotions and expressions are ALLOWED
+- Only reject content that is genuinely harmful or inappropriate for a professional developer community
 
 Response format:
 {

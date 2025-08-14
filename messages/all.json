@@ -57,19 +57,19 @@
     {
       "text": "월요일에 작성한 코드를 한 주 내내 디버깅하느니 차라리 월요일에 침대에 누워있는 게 나을 때가 있다",
       "author": "yybmion",
-      "timestamp": "2025-08-14T14:25:00Z",
+      "timestamp": "2025-08-13T14:25:00Z",
       "lang": "ko"
     },
     {
       "text": "There are only 10 types of people in this world: those who understand binary and those who don't",
       "author": "yybmion",
-      "timestamp": "2025-08-14T15:40:00Z",
+      "timestamp": "2025-08-13T15:40:00Z",
       "lang": "en"
     },
     {
       "text": "카페인을 코드로 변환하는 유기체입니다",
       "author": "yybmion",
-      "timestamp": "2025-08-14T16:55:00Z",
+      "timestamp": "2025-08-13T16:55:00Z",
       "lang": "ko"
     },
     {
@@ -81,7 +81,7 @@
     {
       "text": "99 little bugs in the code, 99 little bugs. Take one down, patch it around, 127 little bugs in the code",
       "author": "yybmion",
-      "timestamp": "2025-08-14T18:35:00Z",
+      "timestamp": "2025-08-13T18:35:00Z",
       "lang": "en"
     },
     {
@@ -93,13 +93,13 @@
     {
       "text": "Code is like humor. When you have to explain it, it's bad",
       "author": "yybmion",
-      "timestamp": "2025-08-14T20:15:00Z",
+      "timestamp": "2025-08-13T20:15:00Z",
       "lang": "en"
     },
     {
       "text": "인터넷에서 복사한 코드를 프로덕션에 붙여넣는 것은 길거리에서 주운 껌을 씹는 것과 같다",
       "author": "yybmion",
-      "timestamp": "2025-08-14T21:30:00Z",
+      "timestamp": "2025-08-13T21:30:00Z",
       "lang": "ko"
     },
     {
@@ -111,157 +111,91 @@
     {
       "text": "프로그래밍의 절반은 코딩이다. 나머지 90%는 디버깅이다",
       "author": "yybmion",
-      "timestamp": "2025-08-15T08:00:00Z",
+      "timestamp": "2025-08-13T08:00:00Z",
       "lang": "ko"
     },
     {
       "text": "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday's code",
       "author": "yybmion",
-      "timestamp": "2025-08-15T09:15:00Z",
+      "timestamp": "2025-08-13T09:15:00Z",
       "lang": "en"
     },
     {
       "text": "변수명을 지을 때가 가장 창의적인 순간",
       "author": "yybmion",
-      "timestamp": "2025-08-15T10:30:00Z",
+      "timestamp": "2025-08-13T10:30:00Z",
       "lang": "ko"
     },
     {
       "text": "How many programmers does it take to change a light bulb? None, that's a hardware problem",
       "author": "yybmion",
-      "timestamp": "2025-08-15T11:45:00Z",
+      "timestamp": "2025-08-13T11:45:00Z",
       "lang": "en"
     },
     {
       "text": "주석이 거짓말할 때가 있지만 코드는 절대 거짓말하지 않는다",
       "author": "yybmion",
-      "timestamp": "2025-08-15T13:00:00Z",
+      "timestamp": "2025-08-13T13:00:00Z",
       "lang": "ko"
     },
     {
-      "text": "Talk is cheap. Show me the code",
-      "author": "yybmion",
-      "timestamp": "2025-08-15T14:15:00Z",
-      "lang": "en"
-    },
-    {
-      "text": "Don't worry if it doesn't work right. If everything did, you'd be out of a job",
-      "author": "yybmion",
-      "timestamp": "2025-08-14T16:04:21.445Z",
-      "lang": "en"
-    },
-    {
-      "text": "It's not a bug; it's an undocumented feature",
+      "text": "Shit, I forgot to save my work before the computer crashed",
       "author": "anonymous",
-      "timestamp": "2025-08-14T08:20:00Z",
+      "timestamp": "2025-08-14T10:05:00Z",
       "lang": "en"
     },
     {
-      "text": "Computers are fast; developers keep them slow",
+      "text": "What the hell is this spaghetti code supposed to do?",
       "author": "anonymous",
-      "timestamp": "2025-08-14T08:25:00Z",
+      "timestamp": "2025-08-14T10:10:00Z",
       "lang": "en"
     },
     {
-      "text": "If, at first, you do not succeed, call it version 1.0",
+      "text": "Damn, I've been debugging this for 4 hours straight",
       "author": "anonymous",
-      "timestamp": "2025-08-14T08:30:00Z",
+      "timestamp": "2025-08-14T10:15:00Z",
       "lang": "en"
     },
     {
-      "text": "Walking on water and developing software from a specification are easy if both are frozen",
+      "text": "Fuck, the production server is down again",
       "author": "anonymous",
-      "timestamp": "2025-08-14T08:35:00Z",
+      "timestamp": "2025-08-14T10:20:00Z",
       "lang": "en"
     },
     {
-      "text": "Software and cathedrals are much the same — first we build them, then we pray",
+      "text": "This damn API documentation makes no sense",
       "author": "anonymous",
-      "timestamp": "2025-08-14T08:40:00Z",
+      "timestamp": "2025-08-14T10:25:00Z",
       "lang": "en"
     },
     {
-      "text": "The best thing about a boolean is even if you are wrong, you are only off by a bit",
+      "text": "Holy shit, my code actually worked on the first try",
       "author": "anonymous",
-      "timestamp": "2025-08-14T08:45:00Z",
+      "timestamp": "2025-08-14T10:30:00Z",
       "lang": "en"
     },
     {
-      "text": "Any code of your own that you haven't looked at for six or more months might as well have been written by someone else",
+      "text": "Goddamn it, I pushed to the wrong branch again",
       "author": "anonymous",
-      "timestamp": "2025-08-14T08:50:00Z",
+      "timestamp": "2025-08-14T10:35:00Z",
       "lang": "en"
     },
     {
-      "text": "That's what's cool about working with computers. They don't argue, they remember everything, and they don't drink all your beer",
+      "text": "Well, shit. That wasn't supposed to delete everything",
       "author": "anonymous",
-      "timestamp": "2025-08-14T08:55:00Z",
+      "timestamp": "2025-08-14T10:40:00Z",
       "lang": "en"
     },
     {
-      "text": "The 50-50-90 rule: Anytime you have a 50-50 chance of getting something right, there's a 90% probability you'll get it wrong",
+      "text": "Why the fuck does this work in Chrome but not in Safari?",
       "author": "anonymous",
-      "timestamp": "2025-08-14T09:00:00Z",
+      "timestamp": "2025-08-14T10:45:00Z",
       "lang": "en"
     },
     {
-      "text": "Only half of programming is coding. The other 90% is debugging",
+      "text": "Damn legacy code, who the hell wrote this mess?",
       "author": "anonymous",
-      "timestamp": "2025-08-14T09:05:00Z",
-      "lang": "en"
-    },
-    {
-      "text": "Profanity is the one language all programmers know best",
-      "author": "anonymous",
-      "timestamp": "2025-08-14T09:10:00Z",
-      "lang": "en"
-    },
-    {
-      "text": "There is nothing quite so permanent as a quick fix",
-      "author": "anonymous",
-      "timestamp": "2025-08-14T09:20:00Z",
-      "lang": "en"
-    },
-    {
-      "text": "There's no test like production",
-      "author": "anonymous",
-      "timestamp": "2025-08-14T09:25:00Z",
-      "lang": "en"
-    },
-    {
-      "text": "Life would be so much easier if we only had the source code",
-      "author": "anonymous",
-      "timestamp": "2025-08-14T09:30:00Z",
-      "lang": "en"
-    },
-    {
-      "text": "Mac users swear by their Mac, PC users swear at their PC",
-      "author": "anonymous",
-      "timestamp": "2025-08-14T09:35:00Z",
-      "lang": "en"
-    },
-    {
-      "text": "Press any key to continue or any other key to quit",
-      "author": "anonymous",
-      "timestamp": "2025-08-14T09:40:00Z",
-      "lang": "en"
-    },
-    {
-      "text": "The collective noun for a group of programmers is a merge-conflict",
-      "author": "anonymous",
-      "timestamp": "2025-08-14T09:45:00Z",
-      "lang": "en"
-    },
-    {
-      "text": "Java is to JavaScript what Car is to Carpet",
-      "author": "anonymous",
-      "timestamp": "2025-08-14T09:50:00Z",
-      "lang": "en"
-    },
-    {
-      "text": "Never trust a computer you can't throw out a window",
-      "author": "anonymous",
-      "timestamp": "2025-08-14T09:55:00Z",
+      "timestamp": "2025-08-14T10:50:00Z",
       "lang": "en"
     }
   ]
